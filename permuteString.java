@@ -1,3 +1,7 @@
+/**
+ * Code to compute String permutation 
+ **/
+ 
 package com.paypal.risk.idi.persistence.processor;
 
 import java.io.BufferedReader;
