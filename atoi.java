@@ -68,7 +68,7 @@ public class atoi {
 		if(isNegative)
 			number = number * -1;
 		
-		System.out.println("The Numeris value of String is "+number);
+		System.out.println("The Numeric value of String is "+number);
 	}
 
 }
