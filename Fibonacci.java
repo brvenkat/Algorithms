@@ -7,8 +7,8 @@ package NonDataStructure;
  *
  */
 public class Fibonacci {
-	private static final int N = 9;
-	public static boolean[] printedArray = new boolean[10];
+	private static final int N = 10;
+	public static boolean[] printedArray = new boolean[N+1];
 	private static StringBuffer sb = new StringBuffer("0,1");
 	public static void main(String args[])
 	{
@@ -35,8 +35,8 @@ public class Fibonacci {
 	 */
 	public int computeFibonacci(int n)
 	{
-       if(n == 0 || n==1)
-          return n;
+       if(n == 1 || n==2)
+          return n-1;
        
        int number = computeFibonacci(n-1)+computeFibonacci(n-2);
        
