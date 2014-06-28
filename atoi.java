@@ -33,7 +33,7 @@ public class atoi {
 			} 
 			catch(NumberFormatException ne)
 			{
-				System.out.println("Not a valid number ");
+				System.out.println(ne.getMessage());
 			}
 			catch(IOException e)
 			{
