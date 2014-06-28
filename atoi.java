@@ -1,7 +1,7 @@
 package NonDataStructure;
 
 /**
- * Code to Convert ASCII to an Integer
+ * Code to Convert String to an Integer
  */
 import java.io.BufferedReader;
 import java.io.IOException;
