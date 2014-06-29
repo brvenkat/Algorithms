@@ -1,30 +1,47 @@
 package NonDataStructure;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- * Function to calculate the first 10 fibonacci numbers.
+ * Class to calculate the first 10 fibonacci numbers.
  * Prints the output on the screen/terminal using StringBuffer
  * @author vbalachandran
  *
  */
 public class Fibonacci {
 	private static final int N = 10;
-	public static boolean[] printedArray = new boolean[N+1];
-	private static StringBuffer sb = new StringBuffer("0,1");
 	public static void main(String args[])
 	{
 		System.out.println("========Code to print the first 10 fibonacci numbers===============");
 		try
 		{
-			printedArray[0] = printedArray[1] =true;
 		    Fibonacci fb = new Fibonacci();
 		    System.out.println("The first 10 fibonacci numbers are ");
-		    fb.computeFibonacci(N);
-		    System.out.println(sb.toString());
+		    List<Integer> fibList = fb.returnFibonacci(N);
+		    for(Integer num: fibList)
+		    	System.out.println(num);
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
+	}
+	/**
+	 * Function that returns a List of the first n fibonacci numbers.
+	 * It calls a helper function to accomplish this
+	 * @param n
+	 * @return
+	 */
+	public List<Integer> returnFibonacci(int n)
+	{
+        List<Integer> fibList = new ArrayList<Integer>();
+    	boolean[] isComputedArray = new boolean[n+1];
+		isComputedArray[1] = isComputedArray[2] =true;
+        fibList.add(0);
+        fibList.add(1);
+        computeFibonacci(n, fibList,isComputedArray);
+        return fibList;
 	}
 	
 	/**
@@ -33,19 +50,18 @@ public class Fibonacci {
 	 * @param n
 	 * @return
 	 */
-	public int computeFibonacci(int n)
+	private int computeFibonacci(int n,List<Integer> fibList,boolean[] isComputedArray)
 	{
        if(n == 1 || n==2)
           return n-1;
        
-       int number = computeFibonacci(n-1)+computeFibonacci(n-2);
+       int number = computeFibonacci(n-1,fibList,isComputedArray)+computeFibonacci(n-2,fibList,isComputedArray);
        
-	   if(!printedArray[n])
+	   if(!isComputedArray[n])
 	   {
-           sb.append(","+number);
-           printedArray[n] = true;
+           fibList.add(number);
+           isComputedArray[n] = true;
 	   }
-	   
        return number;
 	}
 
