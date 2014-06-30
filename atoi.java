@@ -48,7 +48,7 @@ public class atoi {
 	 * Throws a Numberformat Exception if any character in the input string cannot be converted to a number
 	 * @param asciiString
 	 */
-	private void convertASCII(String asciiString)
+	public void convertASCII(String asciiString)
 	{
 		int startindex = 0;
 		int number=0;
