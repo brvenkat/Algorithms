@@ -1,4 +1,4 @@
-package Algorithms;
+package Algorithms2;
 
 import graphAlgorithms.distance;
 
